@@ -10,6 +10,7 @@ public class PressButton : MonoBehaviour
     private bool _isPressed;
     private Vector3 _startPos;
     private ConfigurableJoint _joint;
+    [SerializeField] private bool canBePressed;
 
     public UnityEvent onPressed, onReleased;
     // Start is called before the first frame update
@@ -22,14 +23,19 @@ public class PressButton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!_isPressed && Getvalue() + threshold >= 1)
+        if (!_isPressed && Getvalue() + threshold >= 1 && canBePressed == true)
         {
             Pressed();
+            canBePressed = false;    
         }
-
-        if (_isPressed && Getvalue() - threshold <= 0)
+        if (Getvalue() - threshold <= 0)
+        {
+            canBePressed = true;
+        }
+        if (_isPressed && Getvalue() + threshold >= 1 && canBePressed == true)
         {
             Released();
+            canBePressed = false;
         }
     }
 
