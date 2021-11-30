@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JornHelp : MonoBehaviour
+public class MouseDrag : MonoBehaviour
 {
     private Vector3 screenPoint;
     private Vector3 offset;

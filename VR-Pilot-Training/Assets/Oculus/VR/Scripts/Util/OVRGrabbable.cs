@@ -16,6 +16,7 @@ permissions and limitations under the License.
 
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 /// <summary>
 /// An object that can be grabbed and thrown by OVRGrabber.
@@ -36,6 +37,8 @@ public class OVRGrabbable : MonoBehaviour
     protected bool m_grabbedKinematic = false;
     protected Collider m_grabbedCollider = null;
     protected OVRGrabber m_grabbedBy = null;
+
+    public UnityEvent onReleased;
 
 	/// <summary>
 	/// If true, the object can currently be grabbed.
@@ -124,6 +127,7 @@ public class OVRGrabbable : MonoBehaviour
 	/// </summary>
 	virtual public void GrabEnd(Vector3 linearVelocity, Vector3 angularVelocity)
     {
+        onReleased.Invoke();
         Rigidbody rb = gameObject.GetComponent<Rigidbody>();
         rb.isKinematic = m_grabbedKinematic;
         rb.velocity = linearVelocity;
