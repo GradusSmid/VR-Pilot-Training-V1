@@ -6,10 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/JornScene.unity
-    guid: 11dad36dde59b784bba7620fbacfa925
+    path: Assets/Scenes/Gradus.unity
+    guid: 75b78fb22d5d0684f8fcf4a194081c48
   m_configObjects:
-    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 573cf8dbe1a79e448946fbe60a6aa114,
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 87b1a73b62d8fab42a16a82329789c1f,
       type: 2}
-    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 18d40835e3f418c4a93fa4fe128de8ea,
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 4e9c798b05bccfb40a0b9d2cae0b0e7d,
       type: 2}
