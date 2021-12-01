@@ -18,12 +18,12 @@ public class Lever : MonoBehaviour
     void Update()
     {
         float Rotation;
+        
         if (transform.localEulerAngles.x <= 180f)
             Rotation = transform.localEulerAngles.x;
         else
             Rotation = transform.localEulerAngles.x - 360f;
-        Debug.Log(Rotation);
-
+        transform.Rotate(new Vector3(0, 0, 0), Space.Self);
         if (Rotation >= _joint.limits.max)
         {
             onOn.Invoke();

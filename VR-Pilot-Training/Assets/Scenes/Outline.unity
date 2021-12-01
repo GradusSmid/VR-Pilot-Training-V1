@@ -197,7 +197,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 795316600}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96b4713869b7528429e25758df7f2c01, type: 3}
+  m_Script: {fileID: 11500000, guid: 325435dc9f3f4134a9bc7f0d9469e560, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &927653692 stripped
@@ -221,7 +221,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1013246521}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96b4713869b7528429e25758df7f2c01, type: 3}
+  m_Script: {fileID: 11500000, guid: 325435dc9f3f4134a9bc7f0d9469e560, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1075219699
@@ -255,12 +255,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1075219699}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ec008be30b82ba41bcc2e5ea8668e91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 0
-  outlineColor: {r: 1, g: 0, b: 0, a: 1}
-  outlineWidth: 10
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
@@ -371,6 +371,9 @@ MonoBehaviour:
   m_snapOrientation: 0
   m_snapOffset: {fileID: 0}
   m_grabPoints: []
+  onReleased:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1115985629
 GameObject:
   m_ObjectHideFlags: 0

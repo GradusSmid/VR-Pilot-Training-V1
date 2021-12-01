@@ -22,7 +22,6 @@ public class KnobRotator : MonoBehaviour
 
     private void Start()
     {
-
         currentRotation = this.gameObject.transform.localEulerAngles.y;
         angleMin = GetComponent<HingeJoint>().limits.min;
         angleMax = GetComponent<HingeJoint>().limits.max;
