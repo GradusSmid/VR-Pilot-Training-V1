@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Outline.unity
     guid: c98334caf207371489252ae634a2e272
   m_configObjects:
-    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 87b1a73b62d8fab42a16a82329789c1f,
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 573cf8dbe1a79e448946fbe60a6aa114,
       type: 2}
-    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: f7a0df87a3757f64a851d55c582a88ea,
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 18d40835e3f418c4a93fa4fe128de8ea,
       type: 2}
