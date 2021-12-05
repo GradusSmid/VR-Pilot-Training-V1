@@ -6339,11 +6339,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1257817217}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72b1e41475722974db8f1b19eff04b4f, type: 3}
+  m_Script: {fileID: 11500000, guid: 0caaaca031f28a04fbed12467e3b821e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   totalPoints: 2
-  positions: []
+  positions:
+  - m_PersistentCalls:
+      m_Calls: []
+  - m_PersistentCalls:
+      m_Calls: []
 --- !u!59 &1257817220
 HingeJoint:
   m_ObjectHideFlags: 0
@@ -8196,7 +8200,7 @@ Transform:
   m_GameObject: {fileID: 1584933235}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 277.82318, y: 193.70103, z: 29.051964}
-  m_LocalScale: {x: 100, y: 11, z: 100}
+  m_LocalScale: {x: 200, y: 1, z: 200}
   m_Children: []
   m_Father: {fileID: 183055434}
   m_RootOrder: 0
@@ -8925,6 +8929,36 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1727051691}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1729530373
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1729530374}
+  m_Layer: 0
+  m_Name: Sequence_Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1729530374
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1729530373}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 17.11, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1764611434
 GameObject:
   m_ObjectHideFlags: 0
@@ -10178,7 +10212,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2019917135}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.31264, y: 0.148, z: -9.9897}
+  m_LocalPosition: {x: 0.31264, y: 8.65, z: -9.9897}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 952118830716155829}
