@@ -392,7 +392,7 @@ Transform:
   m_GameObject: {fileID: 55042515}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.37236, y: 0.027999997, z: 2.2447004}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 2019917136}
   m_RootOrder: 5
@@ -485,7 +485,7 @@ Transform:
   m_GameObject: {fileID: 67152897}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.059359998, y: 0.024999991, z: 2.2617002}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 2019917136}
   m_RootOrder: 4
@@ -740,7 +740,7 @@ Transform:
   m_GameObject: {fileID: 147918531}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.2646401, y: 0.072, z: 2.2247005}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 2019917136}
   m_RootOrder: 3
@@ -4037,7 +4037,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d52b7e6df5cfc6647ad135ea795af399, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 2131083236}
 --- !u!23 &744224021
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6359,7 +6358,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 1, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.74842, y: 0.1779299, z: -9.9639}
+  m_ConnectedAnchor: {x: 0.74842, y: 8.67993, z: -9.9639}
   m_UseSpring: 0
   m_Spring:
     spring: 0
@@ -7792,7 +7791,7 @@ HingeJoint:
   m_Anchor: {x: -0.5, y: 0, z: 0}
   m_Axis: {x: 0, y: -1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.30583328, y: 0.21705393, z: -10.143164}
+  m_ConnectedAnchor: {x: -0.30583328, y: 8.719053, z: -10.143164}
   m_UseSpring: 1
   m_Spring:
     spring: 0
@@ -8929,36 +8928,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1727051691}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1729530373
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1729530374}
-  m_Layer: 0
-  m_Name: Sequence_Controller
-  m_TagString: Untagged
-  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1729530374
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1729530373}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 17.11, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1764611434
 GameObject:
   m_ObjectHideFlags: 0
@@ -10203,7 +10172,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2019917136
 Transform:
   m_ObjectHideFlags: 0
@@ -10771,26 +10740,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f09fc44b8bf68224181e0ea6f560d4df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_allowOffhandGrab: 1
-  m_snapPosition: 0
-  m_snapOrientation: 0
-  m_snapOffset: {fileID: 0}
-  m_grabPoints: []
-  onReleased:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2131083242}
-        m_MethodName: OnReleaseGrab
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  handel: {fileID: 744224016}
 --- !u!54 &2131083241
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10819,15 +10768,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4631f904e385d3e41b5ac0bb8f308729, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalPoints: 3
-  lever: {fileID: 1525572788}
-  positions:
-  - m_PersistentCalls:
-      m_Calls: []
-  - m_PersistentCalls:
-      m_Calls: []
-  - m_PersistentCalls:
-      m_Calls: []
 --- !u!1001 &952118830716155828
 PrefabInstance:
   m_ObjectHideFlags: 0
