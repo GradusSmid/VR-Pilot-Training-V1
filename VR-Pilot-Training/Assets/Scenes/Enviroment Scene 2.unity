@@ -10542,6 +10542,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d52b7e6df5cfc6647ad135ea795af399, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 0}
 --- !u!23 &744224021
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -20313,6 +20314,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72b1e41475722974db8f1b19eff04b4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  totalPoints: 2
+  positions: []
 --- !u!59 &1257817220
 HingeJoint:
   m_ObjectHideFlags: 0
@@ -21409,6 +21412,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f09fc44b8bf68224181e0ea6f560d4df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_allowOffhandGrab: 1
+  m_snapPosition: 0
+  m_snapOrientation: 0
+  m_snapOffset: {fileID: 0}
+  m_grabPoints: []
+  onReleased:
+    m_PersistentCalls:
+      m_Calls: []
+  handel: {fileID: 0}
 --- !u!54 &2131083241
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -21437,6 +21449,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4631f904e385d3e41b5ac0bb8f308729, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  totalPoints: 2
+  lever: {fileID: 0}
+  positions: []
 --- !u!1001 &952118830716155828
 PrefabInstance:
   m_ObjectHideFlags: 0
