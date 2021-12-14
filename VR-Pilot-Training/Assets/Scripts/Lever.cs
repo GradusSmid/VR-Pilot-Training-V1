@@ -6,12 +6,22 @@ using UnityEngine.Events;
 public class Lever : MonoBehaviour
 {
     private HingeJoint _joint;
+    public bool startAsOn = true;
     // Start is called before the first frame update
 
     public UnityEvent onOn, onOff;
     void Start()
     {
         _joint = GetComponent<HingeJoint>();
+
+        if (startAsOn)
+        {
+            onOn.Invoke();
+        }
+        else
+        {
+            onOff.Invoke();
+        }
     }
 
     // Update is called once per frame

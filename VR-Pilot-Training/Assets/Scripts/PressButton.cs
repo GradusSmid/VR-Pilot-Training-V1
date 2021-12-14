@@ -8,6 +8,7 @@ public class PressButton : MonoBehaviour
     [SerializeField] private float deadZone = 0.025f;
 
     private bool _isPressed;
+    public bool startAsOn = true;
     private Vector3 _startPos;
     private ConfigurableJoint _joint;
     [SerializeField] private bool canBePressed;
@@ -18,6 +19,14 @@ public class PressButton : MonoBehaviour
     {
         _startPos = transform.localPosition;
         _joint = GetComponent<ConfigurableJoint>();
+
+        if (startAsOn)
+        {
+            onReleased.Invoke();
+        } else
+        {
+            onPressed.Invoke();
+        }
     }
 
     // Update is called once per frame

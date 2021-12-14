@@ -50,7 +50,13 @@ public class LeverScript : MonoBehaviour
             snapPoints[i] = angleStart + tempPoint;
             tempPoint = tempPoint + distancePerPoint;
         }
-        Debug.Log("Snappoint 1: " + snapPoints[0] + "Snappoint 2: " + snapPoints[1] + "Snappoint 3: " + snapPoints[2]);
+        //Debug.Log("Snappoint 1: " + snapPoints[0] + "Snappoint 2: " + snapPoints[1] + "Snappoint 3: " + snapPoints[2]);
+        //==========================
+        var nearest = snapPoints.OrderBy(x => Mathf.Abs(x - lever.gameObject.transform.localEulerAngles.x)).First();
+        var qr = Quaternion.Euler(0, nearest, 0);
+        indexNumber = System.Array.IndexOf(snapPoints, nearest);
+        positions[indexNumber].Invoke();
+        //=========================
     }
 
     public void OnReleaseGrab()

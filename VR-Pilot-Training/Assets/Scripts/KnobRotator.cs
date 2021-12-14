@@ -40,6 +40,14 @@ public class KnobRotator : MonoBehaviour
             snapPoints[i] = angleStart + tempPoint;
             tempPoint = tempPoint + distancePerPoint;
         }
+        //==========================
+        var nearest = snapPoints.OrderBy(x => Mathf.Abs(x - this.gameObject.transform.localEulerAngles.y)).First();
+        var qr = Quaternion.Euler(10, nearest, 10);
+        indexNumber = System.Array.IndexOf(snapPoints, nearest);
+        Debug.Log("indexNumber" + indexNumber);
+        positions[indexNumber].Invoke();
+        transform.rotation = qr;
+        //==========================
     }
 
     public void OnReleaseGrab()
@@ -47,7 +55,6 @@ public class KnobRotator : MonoBehaviour
         var nearest = snapPoints.OrderBy(x => Mathf.Abs(x - this.gameObject.transform.localEulerAngles.y)).First();
         var qr = Quaternion.Euler(10, nearest, 10);
         indexNumber = System.Array.IndexOf(snapPoints, nearest);
-        Debug.Log("indexNumber" + indexNumber);
         positions[indexNumber].Invoke();
         transform.rotation = qr;
     }

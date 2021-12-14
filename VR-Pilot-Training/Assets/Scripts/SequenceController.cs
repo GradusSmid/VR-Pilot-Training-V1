@@ -9,51 +9,212 @@ public class SequenceController : MonoBehaviour
      * (Button 1 on pos 3, button 2 on pos 1, button 3 on pos 4)
      * Knob rotator, leverscript, and button scripts trigger public voids in this script.
      * On their side we can determine which position is correct by activating a public void here.
-     * This needs a number variable number of Unity events " public List<UnityEvent> sequence; "
-     * If all are correct it's green lights.
+     * 
+     * Every button has a seperate function they can call
+     * If all buttons are done correct in sequence level iscomplete
+     * Problems: 
+     * - Has to be done in sequence, if it is wrong it has to reset.
+     * - User may not be able to keep sending the correct awnser from the same button, so it has to be done with a true & false system instead of a += 1 system.
+     * - Some buttons could already be on the right position
+     * 
+     * ========================================================================================================================
+     * Bit spagetti, but should work as long as all buttons send their current position as soon as they start to this script. 
+     * Especcialy if those positions are wrong.
+     * ========================================================================================================================
     */
 
     public List<UnityEvent> sequence;
-    [SerializeField] [Range(1, 10)] int stepsToComplete = 4;
-    int stepsCorrect = 0;
-    
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
+    //[SerializeField] [Range(1, 10)] int stepsToComplete = 4;
+    //int stepsCorrect = 0;
+    int timer = 0;
+    bool scoreDecrease = false;
+    int score = 0;
+    bool one = true;
+    bool two = true;
+    bool three = true;
+    bool four = true;
+    bool five = true;
+    bool six = true;
+    bool seven = true;
+    bool eight = true;
+    bool nine = true;
+    bool ten = true;
 
     // Update is called once per frame
     void Update()
     {
-        if (stepsCorrect >+ stepsToComplete)
+        timer += 1;
+        if (timer >= 10) // Only decrease score a bit after game has started.
         {
-            Debug.Log("Training complete");
+            scoreDecrease = true;
         }
+
+        if (one == true &&
+            two == true &&
+            three == true &&
+            four == true &&
+            five == true &&
+            six == true &&
+            seven == true &&
+            eight == true &&
+            nine == true &&
+            ten == true)
+        {
+            levelComplete();
+        }
+
     }
 
-    //Need a >Efficient< way so you can't repeat a step to complete. 
+    //Still looking for e prettier way to achive the same result
     public void stepOne()
     {
-        //if stepOneCheck == 0, do this.
-        stepsCorrect += 1;
-        //After set stepOneCheck to 1.
-        //Then it can only be called once, but this methos is not very pretty.
+        one = true;
+    }
+    public void stepOneWrong()
+    {
+        one = false;
+        if (scoreDecrease == true)
+        {
+            score -= 1;
+        }
     }
 
     public void stepTwo()
     {
-        stepsCorrect += 1;
+        two = true;
+    }
+    public void stepTwoWrong()
+    {
+        two = false;
+        if (scoreDecrease == true)
+        {
+            score -= 1;
+        }
     }
 
     public void stepThree()
     {
-        stepsCorrect += 1;
+        three = true;
+    }
+    public void stepThreeWrong()
+    {
+        three = false;
+        if (scoreDecrease == true)
+        {
+            score -= 1;
+        }
     }
 
     public void stepFour()
     {
-        stepsCorrect += 1;
+        four = true;
     }
+    public void stepFourWrong()
+    {
+        four = false;
+        if (scoreDecrease == true)
+        {
+            score -= 1;
+        }
+    }
+
+    public void stepFive()
+    {
+        five = true;
+    }
+    public void stepFiveWrong()
+    {
+        five = false;
+        if (scoreDecrease == true)
+        {
+            score -= 1;
+        }
+    }
+
+    public void stepSix()
+    {
+        six = true;
+    }
+    public void stepSixWrong()
+    {
+        six = false;
+        if (scoreDecrease == true)
+        {
+            score -= 1;
+        }
+    }
+
+    public void stepSeven()
+    {
+        six = true;
+    }
+    public void stepSevenWrong()
+    {
+        seven = false;
+        if (scoreDecrease == true)
+        {
+            score -= 1;
+        }
+    }
+
+    public void stepEight()
+    {
+        eight = true;
+    }
+    public void stepEightWrong()
+    {
+        eight = false;
+        if (scoreDecrease == true)
+        {
+            score -= 1;
+        }
+    }
+
+    public void stepNine()
+    {
+        nine = true;
+    }
+    public void stepNineWrong()
+    {
+        nine = false;
+        if (scoreDecrease == true)
+        {
+            score -= 1;
+        }
+    }
+
+    public void stepTen()
+    {
+        ten = true;
+    }
+    public void stepTenWrong()
+    {
+        ten = false;
+        if (scoreDecrease == true)
+        {
+            score -= 1;
+        }
+    }
+
+
+    public void levelComplete()
+    {
+        Debug.Log("Level complete");
+        Debug.Log("Minus points: " + score);
+    }
+    /*
+    public void resetSquence()
+    {
+        one = false;
+        two = false;
+        three = false;
+        four = false;
+        five = false;
+        six = false;
+        seven = false;
+        eight = false;
+        nine = false;
+        ten = false;
+    }
+    */
 }
