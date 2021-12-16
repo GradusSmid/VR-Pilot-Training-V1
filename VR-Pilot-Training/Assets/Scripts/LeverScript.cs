@@ -17,7 +17,9 @@ public class LeverScript : MonoBehaviour
     float spaceInbetween;
     float[] snapPoints;
     float currentXRotation;
+    float currentZRotation;
     float nearest;
+    public bool useZaxis = true;
     int indexNumber;
     public GameObject lever;
 
@@ -25,12 +27,19 @@ public class LeverScript : MonoBehaviour
 
     private void Start()
     {
-
         currentXRotation = lever.gameObject.transform.localEulerAngles.x;
+        currentZRotation = lever.gameObject.transform.localEulerAngles.z;
         angleMin = lever.GetComponent<HingeJoint>().limits.min;
         angleMax = lever.GetComponent<HingeJoint>().limits.max;
+        if (useZaxis == true)
+        {
+            angleStart = currentZRotation + angleMin;
+            angleStop = currentZRotation + angleMax;
+        } else
+        {
             angleStart = currentXRotation + angleMin;
             angleStop = currentXRotation + angleMax;
+        }
 
 
         Debug.Log("angleStart" + angleStart);
@@ -51,23 +60,42 @@ public class LeverScript : MonoBehaviour
             tempPoint = tempPoint + distancePerPoint;
         }
         //Debug.Log("Snappoint 1: " + snapPoints[0] + "Snappoint 2: " + snapPoints[1] + "Snappoint 3: " + snapPoints[2]);
-        //==========================
-        var nearest = snapPoints.OrderBy(x => Mathf.Abs(x - lever.gameObject.transform.localEulerAngles.x)).First();
-        var qr = Quaternion.Euler(0, nearest, 0);
-        indexNumber = System.Array.IndexOf(snapPoints, nearest);
-        positions[indexNumber].Invoke();
-        //=========================
+        if (useZaxis == true)
+        {
+            var nearest = snapPoints.OrderBy(z => Mathf.Abs(z - lever.gameObject.transform.localEulerAngles.z)).First();
+            var qr = Quaternion.Euler(0, nearest, 0);
+            indexNumber = System.Array.IndexOf(snapPoints, nearest);
+            positions[indexNumber].Invoke();
+        } else
+        {
+            //==========================
+            var nearest = snapPoints.OrderBy(x => Mathf.Abs(x - lever.gameObject.transform.localEulerAngles.x)).First();
+            var qr = Quaternion.Euler(0, nearest, 0);
+            indexNumber = System.Array.IndexOf(snapPoints, nearest);
+            positions[indexNumber].Invoke();
+            //=========================
+        }
     }
 
     public void OnReleaseGrab()
     {
-        var nearest = snapPoints.OrderBy(x => Mathf.Abs(x - lever.gameObject.transform.localEulerAngles.x)).First();
-        var qr = Quaternion.Euler(0, nearest, 0);
-        indexNumber = System.Array.IndexOf(snapPoints, nearest);
-        Debug.Log("indexNumber" + indexNumber);
-        positions[indexNumber].Invoke();
-        // lever.trasfrom.rotation maybe if I want it to snap.
-        //transform.rotation = qr;
+        if (useZaxis == true)
+        {
+            var nearest = snapPoints.OrderBy(z => Mathf.Abs(z - lever.gameObject.transform.localEulerAngles.z)).First();
+            var qr = Quaternion.Euler(0, nearest, 0);
+            indexNumber = System.Array.IndexOf(snapPoints, nearest);
+            Debug.Log("indexNumber" + indexNumber);
+            positions[indexNumber].Invoke();
+        } else
+        {
+            //=========================
+            var nearest = snapPoints.OrderBy(x => Mathf.Abs(x - lever.gameObject.transform.localEulerAngles.x)).First();
+            var qr = Quaternion.Euler(0, nearest, 0);
+            indexNumber = System.Array.IndexOf(snapPoints, nearest);
+            Debug.Log("indexNumber" + indexNumber);
+            positions[indexNumber].Invoke();
+            //==========================
+        }
     }
 
 }
