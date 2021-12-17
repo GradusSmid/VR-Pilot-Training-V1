@@ -23,7 +23,7 @@ public class SequenceController : MonoBehaviour
      * ========================================================================================================================
     */
 
-    public List<UnityEvent> sequence;
+    //public List<UnityEvent> sequence;
     //[SerializeField] [Range(1, 10)] int stepsToComplete = 4;
     //int stepsCorrect = 0;
     int timer = 0;
@@ -65,14 +65,16 @@ public class SequenceController : MonoBehaviour
 
     }
 
-    //Still looking for e prettier way to achive the same result
+    //Still looking for a prettier way to achive the same result
     public void stepOne()
     {
         one = true;
+        Debug.Log("Step 1 correct");
     }
     public void stepOneWrong()
     {
         one = false;
+        Debug.Log("Step 1 WRONG!");
         if (scoreDecrease == true)
         {
             score -= 1;
@@ -82,10 +84,12 @@ public class SequenceController : MonoBehaviour
     public void stepTwo()
     {
         two = true;
+        Debug.Log("Step 2 correct");
     }
     public void stepTwoWrong()
     {
         two = false;
+        Debug.Log("Step 2 WRONG!");
         if (scoreDecrease == true)
         {
             score -= 1;
@@ -95,10 +99,12 @@ public class SequenceController : MonoBehaviour
     public void stepThree()
     {
         three = true;
+        Debug.Log("Step 3 correct");
     }
     public void stepThreeWrong()
     {
         three = false;
+        Debug.Log("Step 3 WRONG!");
         if (scoreDecrease == true)
         {
             score -= 1;
@@ -108,10 +114,12 @@ public class SequenceController : MonoBehaviour
     public void stepFour()
     {
         four = true;
+        Debug.Log("Step 4 correct");
     }
     public void stepFourWrong()
     {
         four = false;
+        Debug.Log("Step 4 WRONG!");
         if (scoreDecrease == true)
         {
             score -= 1;
@@ -121,10 +129,12 @@ public class SequenceController : MonoBehaviour
     public void stepFive()
     {
         five = true;
+        Debug.Log("Step 5 correct");
     }
     public void stepFiveWrong()
     {
         five = false;
+        Debug.Log("Step 5 WRONG!");
         if (scoreDecrease == true)
         {
             score -= 1;
@@ -134,10 +144,12 @@ public class SequenceController : MonoBehaviour
     public void stepSix()
     {
         six = true;
+        Debug.Log("Step 6 correct");
     }
     public void stepSixWrong()
     {
         six = false;
+        Debug.Log("Step 6 WRONG!");
         if (scoreDecrease == true)
         {
             score -= 1;

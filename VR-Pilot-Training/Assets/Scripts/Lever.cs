@@ -36,12 +36,12 @@ public class Lever : MonoBehaviour
         transform.Rotate(new Vector3(0, 0, 0), Space.Self);
         if (Rotation >= _joint.limits.max)
         {
-            onOn.Invoke();
+            onOff.Invoke();
         }
 
         if (Rotation <= _joint.limits.min )
         {
-            onOff.Invoke();
+            onOn.Invoke();
         }
     }
 }

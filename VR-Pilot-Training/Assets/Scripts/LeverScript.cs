@@ -42,8 +42,8 @@ public class LeverScript : MonoBehaviour
         }
 
 
-        Debug.Log("angleStart" + angleStart);
-        Debug.Log("angleStop" + angleStop);
+        //Debug.Log("angleStart" + angleStart);
+        //Debug.Log("angleStop" + angleStop);
 
 
         snapPoints = new float[totalPoints];
