@@ -361,6 +361,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalPoints: 3
+  useZaxis: 1
   lever: {fileID: 0}
   positions:
   - m_PersistentCalls:
@@ -1331,9 +1332,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1200248328}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ec008be30b82ba41bcc2e5ea8668e91, type: 3}
+  m_Script: {fileID: 11500000, guid: 4309258e8ad61664999fe1a50f0a888c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outlineMode: 1
+  outlineColor: {r: 1, g: 0, b: 0, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!65 &1200248332
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1796,6 +1803,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalPoints: 3
+  useZaxis: 1
   lever: {fileID: 195922067}
   positions:
   - m_PersistentCalls:
