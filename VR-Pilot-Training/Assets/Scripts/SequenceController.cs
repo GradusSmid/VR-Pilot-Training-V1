@@ -28,6 +28,8 @@ public class SequenceController : MonoBehaviour
     bool nine = true;
     bool ten = true;
 
+    [SerializeField] private GameObject lightstuff;
+
     // Update is called once per frame
     void Update()
     {
@@ -203,6 +205,7 @@ public class SequenceController : MonoBehaviour
     */
     IEnumerator LevelComplete()
     {
+        lightstuff.SetActive(false);
         myCanvas.SetActive(true);
         Debug.Log("Minus points: " + score);
         yield return new WaitForSeconds(4);

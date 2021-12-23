@@ -7,6 +7,7 @@ public class Lever : MonoBehaviour
 {
     private HingeJoint _joint;
     public bool startAsOn = true;
+    public bool isOn;
     // Start is called before the first frame update
 
     public UnityEvent onOn, onOff;
@@ -27,21 +28,46 @@ public class Lever : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float Rotation;
-        
-        if (transform.localEulerAngles.x <= 180f)
-            Rotation = transform.localEulerAngles.x;
-        else
-            Rotation = transform.localEulerAngles.x - 360f;
-        transform.Rotate(new Vector3(0, 0, 0), Space.Self);
-        if (Rotation >= _joint.limits.max)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            onOff.Invoke();
-        }
+            if (isOn == false)
+            {
+                transform.Rotate(new Vector3(-100, 0, 0));
+                isOn = true;
+                onOff.Invoke();
+            }
 
-        if (Rotation <= _joint.limits.min )
+            else if (isOn == true)
+            {
+                transform.Rotate(new Vector3(100, 0, 0));
+                isOn = false;
+                onOn.Invoke();
+            }
+
+        }
+    }
+    void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
         {
-            onOn.Invoke();
+            if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) || OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger))
+            {
+                Debug.Log("Gefonden");
+                if (isOn == false)
+                {
+                    transform.Rotate(new Vector3(-100, 0, 0));
+                    isOn = true;
+                    onOff.Invoke();
+                }
+
+                else if (isOn == true)
+                {
+                    transform.Rotate(new Vector3(100, 0, 0));
+                    isOn = false;
+                    onOn.Invoke();
+                }
+
+            }
         }
     }
 }
